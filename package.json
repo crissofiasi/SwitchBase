@@ -3,7 +3,7 @@
   "displayName": "SwitchBase",
   "description": "Convert numbers between binary, decimal, and hexadecimal bases with format preservation",
   "version": "1.0.0",
-  "publisher": "CristianDaminescu",
+  "publisher": "crissofiasi",
   "engines": {
     "vscode": "^1.104.0"
   },
