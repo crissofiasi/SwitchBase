@@ -1,0 +1,88 @@
+{
+  "name": "switchbase",
+  "displayName": "SwitchBase",
+  "description": "Convert numbers between binary, decimal, and hexadecimal bases with format preservation",
+  "version": "1.0.0",
+  "publisher": "CristianDaminescu",
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "number",
+    "base",
+    "conversion",
+    "binary",
+    "hex",
+    "decimal",
+    "programming"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crissofiasi/SwitchBase"
+  },
+  "homepage": "https://github.com/crissofiasi/SwitchBase",
+  "bugs": {
+    "url": "https://github.com/crissofiasi/SwitchBase/issues"
+  },
+  "license": "MIT",
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "switchbase.convertToBinary",
+        "title": "Convert to Binary (base 2)"
+      },
+      {
+        "command": "switchbase.convertToDecimal",
+        "title": "Convert to Decimal (base 10)"
+      },
+      {
+        "command": "switchbase.convertToHex",
+        "title": "Convert to Hexadecimal (base 16)"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "switchbase.submenu",
+        "label": "SwitchBase"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorHasSelection",
+          "submenu": "switchbase.submenu",
+          "group": "navigation"
+        }
+      ],
+      "switchbase.submenu": [
+        {
+          "when": "editorHasSelection",
+          "command": "switchbase.convertToBinary",
+          "group": "convert@1"
+        },
+        {
+          "when": "editorHasSelection",
+          "command": "switchbase.convertToDecimal",
+          "group": "convert@2"
+        },
+        {
+          "when": "editorHasSelection",
+          "command": "switchbase.convertToHex",
+          "group": "convert@3"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "echo 'Extension compiled successfully!'",
+    "build": "echo 'Extension built successfully!'"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.104.0"
+  }
+}
